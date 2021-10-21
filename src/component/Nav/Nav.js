@@ -5,7 +5,7 @@ export default function Nav() {
   return (
     <StyledNav>
       <h3>
-        <i class="fas fa-cat" style={{ marginRight: 5 }}></i>
+        <i className="fas fa-cat" style={{ marginRight: 5 }}></i>
         CATAHOLIC
       </h3>
       <SNSs></SNSs>
@@ -39,7 +39,7 @@ const SNSs = () => {
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
       {sns.map((ele) => (
-        <SNS className={ele.className} href={ele.href} />
+        <SNS className={ele.className} href={ele.href} key={ele.className} />
       ))}
       <MenuBtn
         onMouseEnter={() => handleHover(1)}
