@@ -2,6 +2,7 @@ import * as React from "react";
 import Introduce from "./Introduce/Introduce";
 import Feature from "./Feature/Feature";
 import Sort from "./Sort/Sort";
+import Behavior from "./Behavior/Behavior";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Introduce />
       <Feature />
       <Sort />
+      <Behavior />
     </div>
   );
 }

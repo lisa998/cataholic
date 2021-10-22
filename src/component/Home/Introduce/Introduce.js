@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Body, Words, Title, Img } from "./styled";
-import { MenuBtn, Card } from "../../Nav/styled";
+import { ContentBtn, Card } from "../../Nav/styled";
 export default function Introduce() {
   const [hover, handleHover] = React.useState(0);
   const ImgUrl = "https://images.unsplash.com/";
@@ -46,7 +46,7 @@ export default function Introduce() {
         <Title style={{ position: "relative" }}>WHAT DO YOU CALL </Title>
         <Title>A PILE OF CATS</Title>
         <Title style={{ position: "relative" }}>A MEOWTAIN</Title>
-        <MenuBtn
+        <ContentBtn
           style={{ width: 160, marginTop: 120 }}
           color="#ffc233"
           onMouseEnter={() => handleHover(1)}
@@ -55,7 +55,7 @@ export default function Introduce() {
           Request a quote
           <Card deg={hover ? 0 : -4} color="#ffc233" />
           <Card deg={hover ? 0 : 4} color="#ffc233" />
-        </MenuBtn>
+        </ContentBtn>
       </div>
       <div
         style={{

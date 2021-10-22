@@ -69,3 +69,11 @@
     opacity: 0;
   }
 }
+@keyframes scroller {
+  0% {
+    transform: translateX(30%);
+  }
+  100% {
+    transform: translateX(-3.5%);
+  }
+}

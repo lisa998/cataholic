@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyledNav, StyledSNS, MenuBtn, Card } from "./styled";
+import { StyledNav, StyledSNS, ContentBtn, Card } from "./styled";
 
 export default function Nav() {
   return (
@@ -41,14 +41,14 @@ const SNSs = () => {
       {sns.map((ele) => (
         <SNS className={ele.className} href={ele.href} key={ele.className} />
       ))}
-      <MenuBtn
+      <ContentBtn
         onMouseEnter={() => handleHover(1)}
         onMouseLeave={() => handleHover(0)}
       >
         MENU
         <Card deg={hover ? 0 : -4} />
         <Card deg={hover ? 0 : 4} />
-      </MenuBtn>
+      </ContentBtn>
     </div>
   );
 };

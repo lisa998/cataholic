@@ -18,7 +18,7 @@ export const StyledSNS = styled.div`
     transform: scale(1.05);
   }
 `;
-export const MenuBtn = styled.div((props) => ({
+export const ContentBtn = styled.div((props) => ({
   border: props.color ? `1px solid ${props.color}` : "1px solid #042fab",
   padding: "13px 28px",
   height: 25,
@@ -28,7 +28,7 @@ export const MenuBtn = styled.div((props) => ({
   color: props.color ? props.color : null,
   "&:hover ": {
     background: props.color ? props.color : "#042fab",
-    color: "white",
+    color: props.fontColor ? props.fontColor : "white",
   },
 }));
 export const Card = styled.div((props) => ({

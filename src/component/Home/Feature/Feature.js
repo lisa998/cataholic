@@ -67,15 +67,16 @@ export default function Feature() {
       }
       if (currentScroll > scrollVal) {
         setRotate([0.3, 0.05]);
-        setTimeout(() => setRotate([0, 0.15]), 50);
+        setTimeout(() => setRotate([0, 0.15]), 10);
       } else {
         setRotate([-0.3, 0.05]);
-        setTimeout(() => setRotate([0, 0.15]), 50);
+        setTimeout(() => setRotate([0, 0.15]), 10);
       }
     };
     window.addEventListener("scroll", () => listener(), true);
     return window.removeEventListener("scroll", listener);
   }, [text]);
+
   return (
     <Body
       sticky={sticky}
