@@ -7,17 +7,14 @@ import { content } from "./content";
 export default function Sort() {
   const [steps, setSteps] = React.useState(0);
   const width = React.useRef();
-  function deliver(w) {
-    return w;
-  }
+  let leftSteps = React.useRef();
   React.useEffect(() => {
-    let w =
+    leftSteps.current =
       content.length - Math.floor((width.current.clientWidth - 100) / 390);
-    deliver(w);
   }, []);
-  const leftSteps = React.useMemo(() => deliver(), []);
+
   const nextStep = () => {
-    if (steps < leftSteps || 3) {
+    if (steps < leftSteps.current) {
       setSteps((steps) => steps + 1);
     }
   };
@@ -49,10 +46,12 @@ export default function Sort() {
               className="bi bi-arrow-right"
               disable={steps === 0}
               onClick={prevStep}
+              border={"#042fab"}
             ></Arrow>
             <Arrow
               className="bi bi-arrow-left"
-              disable={steps === 3}
+              disable={steps === leftSteps.current}
+              border={"#042fab"}
               onClick={nextStep}
             ></Arrow>
           </div>

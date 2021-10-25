@@ -15,11 +15,15 @@ export const Arrow = styled.i((props) => ({
   position: "relative",
   top: 30,
   height: 60,
-  opacity: props.disable ? 0.2 : 0.6,
+  opacity: props.disable ? 0.3 : 1,
   "&:hover": {
     opacity: props.disable ? null : 1,
     cursor: props.disable ? null : "pointer",
+    color: props.disable ? null : props.border,
   },
+  textShadow: `1px 1px ${props.border}, -1px -1px ${props.border}, 1px -1px ${props.border},
+  -1px 1px ${props.border}`,
+  color: "white",
 }));
 export const ContentBtn = styled.div((props) => ({
   margin: 15,
@@ -62,12 +66,12 @@ export const H5 = styled.h5((props) => ({
     : " translateX(-50%) translateY(260px)",
   margin: 0,
   transition: "linear .2s",
-  position: "absolute",
+  position: "relative",
   top: 30,
   left: "50%",
 }));
 export const P = styled.p((props) => ({
-  fontSize: 14,
+  fontSize: 10,
   textAlign: "left",
   top: 30,
   position: "relative",

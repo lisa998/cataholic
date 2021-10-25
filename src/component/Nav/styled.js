@@ -41,4 +41,5 @@ export const Card = styled.div((props) => ({
   top: 0,
   transition: "transform 0.4s cubic-bezier(.23,1,.32,1)",
   transform: `rotate(${props.deg}deg)`,
+  background: props.color ? props.color : "white",
 }));

@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Body, Line, H1, ContentBtn, H5 } from "./styled";
+import { Body, Line, H1, ContentBtn, H5, P, Discover } from "./styled";
 import { Words } from "../Feature/styled";
+import { content } from "./content";
 
 export default function Behavior() {
   const wordsStyle = {
@@ -41,27 +42,49 @@ export default function Behavior() {
             justifyContent: "flex-start",
           }}
         >
-          <Block />
-          <Block />
-          <Block />
-          <Block />
-          <Block />
-          <Block />
+          {content.map((ele, i) => (
+            <Block content={ele} key={i} />
+          ))}
         </div>
       </div>
     </Body>
   );
 }
-const Block = () => {
+const Block = ({ content }) => {
   const [hover, handleHover] = React.useState(0);
   return (
     <ContentBtn
       onMouseEnter={() => handleHover(1)}
       onMouseLeave={() => handleHover(0)}
       hover={hover}
+      img={content.img}
     >
       <div style={{ flex: "0 0 83.333%" }}></div>
-      <H5>123</H5>
+      <H5 hover={hover}>{content.title}</H5>
+      <div style={{ position: "relative", left: 42, bottom: -105 }}>
+        <Discover
+          delay={0.3}
+          style={{ fontSize: 40, position: "relative" }}
+          hover={hover}
+        >
+          <i className="fas fa-long-arrow-alt-down"></i>
+        </Discover>
+        <Discover
+          delay={0.4}
+          style={{ fontSize: 40, position: "relative" }}
+          hover={hover}
+        >
+          <i className="fas fa-long-arrow-alt-down"></i>
+        </Discover>
+        <Discover
+          delay={0.5}
+          hover={hover}
+          style={{ fontSize: 26, position: "relative" }}
+        >
+          dicover
+        </Discover>
+      </div>
+      <P hover={hover}>{content.title}</P>
     </ContentBtn>
   );
 };
