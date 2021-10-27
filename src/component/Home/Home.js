@@ -4,6 +4,8 @@ import Feature from "./Feature/Feature";
 import Sort from "./Sort/Sort";
 import Behavior from "./Behavior/Behavior";
 import Cards from "./Cards/Cards";
+import Reference from "./Reference/Reference";
+import News from "./News/News";
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
       <Sort />
       <Behavior />
       <Cards />
+      <Reference />
+      <News />
     </div>
   );
 }

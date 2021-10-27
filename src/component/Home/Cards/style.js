@@ -34,5 +34,5 @@ export const Card = styled.div((props) => ({
 }));
 export const P = styled.h2((props) => ({
   fontFamily: `"Comfortaa",cursive`,
-  lineHeight: "1.5rem",
+  lineHeight: "2.5rem",
 }));
