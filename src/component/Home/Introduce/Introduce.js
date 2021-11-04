@@ -47,14 +47,14 @@ export default function Introduce() {
         <Title>A PILE OF CATS</Title>
         <Title style={{ position: "relative" }}>A MEOWTAIN</Title>
         <ContentBtn
-          style={{ width: 160, marginTop: 120 }}
+          style={{ width: 115, marginTop: 120 }}
           color="#ffc233"
           onMouseEnter={() => handleHover(1)}
           onMouseLeave={() => handleHover(0)}
         >
-          Request a quote
-          <Card deg={hover ? 0 : -4} color="#ffc233" />
-          <Card deg={hover ? 0 : 4} color="#ffc233" />
+          Contact us
+          <Card deg={hover ? 0 : -4} style={{ border: `1px solid #ffc233` }} />
+          <Card deg={hover ? 0 : 4} style={{ border: `1px solid #ffc233` }} />
         </ContentBtn>
       </div>
       <div

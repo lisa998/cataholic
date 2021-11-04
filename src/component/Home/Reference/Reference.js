@@ -13,6 +13,18 @@ export default function Reference() {
       img: "/drake.jpg",
     },
     { href: "https://www.purina.com/cats/cat-breeds", img: "/purina.jpg" },
+    {
+      href: "https://vetschoice.guildinsurance.com.au/",
+      img: "/vetchoice.jpg",
+    },
+    {
+      href: "https://www.wondercide.com/blogs/news/5-reasons-to-adopt-dont-shop",
+      img: "/wondercide.jpg",
+    },
+    {
+      href: "https://www.nationalgeographic.com/animals/mammals/facts/domestic-cat",
+      img: "/nationalGeographic.jpg",
+    },
   ];
   const wordsStyle = {
     textAlign: "left",

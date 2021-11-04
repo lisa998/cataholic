@@ -93,4 +93,5 @@ export const Discover = styled.p((props) => ({
   transitionDelay: props.hover ? props.time : null,
   transform: props.hover ? null : "translateX(-100px)",
   whiteSpace: "nowrap",
+  background: "white",
 }));

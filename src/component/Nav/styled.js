@@ -3,17 +3,17 @@ import styled from "@emotion/styled";
 export const StyledNav = styled.div`
   color: #042fab;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: center;
   align-items: center;
   position: fixed;
-  width: 100%;
+  width: 90%;
   z-index: 5;
+  height: 10vh;
 `;
 
 export const StyledSNS = styled.div`
   padding: 0 7.5px;
-  font-size: 16px;
   &:hover {
     transform: scale(1.05);
   }
@@ -26,6 +26,7 @@ export const ContentBtn = styled.div((props) => ({
   position: "relative",
   background: "white",
   color: props.color ? props.color : null,
+  cursor: "pointer",
   "&:hover ": {
     background: props.color ? props.color : "#042fab",
     color: props.fontColor ? props.fontColor : "white",
