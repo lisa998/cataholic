@@ -13,7 +13,7 @@ export default function News() {
     title: "",
     description: "",
   });
-  /*React.useEffect(() => {
+  React.useEffect(() => {
     (async function () {
       let R = await axios.get(
         "https://newsapi.org/v2/everything?qInTitle=cat&language=en&sortBy=popularity&pageSize=2&apiKey=08b7d6af7ef84eaaaf41343c06b5cd2a"
@@ -27,7 +27,7 @@ export default function News() {
         description: R.data.articles[1].description,
       });
     })();
-  }, []);*/
+  }, []);
   return (
     <Body>
       <LinedDiv style={{ justifyContent: "flex-start" }}>popular news</LinedDiv>
