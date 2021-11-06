@@ -17,6 +17,7 @@ export const StyledInfo = styled.div((props) => ({
     top: "15%",
     backgroundSize: "cover",
     opacity: 0.3,
+    animation: "startImg 0.5s ease-in-out",
     backgroundImage:
       "url('https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_26/3487828/210630-stock-cat-bed-ew-245p.jpg')",
   },
@@ -26,6 +27,7 @@ export const H = styled.h1((props) => ({
   fontFamily: `"Cinzel", serif`,
   position: "relative",
   top: "-5%",
+  animation: "startHead 0.3s ease-in-out",
 }));
 export const Line = styled.div((props) => ({
   height: 1,

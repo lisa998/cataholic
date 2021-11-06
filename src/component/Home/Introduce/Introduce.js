@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Body, Words, Title, Img } from "./styled";
 import { ContentBtn, Card } from "../../Nav/styled";
+import { StyledLink } from "../StyledLink";
 export default function Introduce() {
   const [hover, handleHover] = React.useState(0);
   const ImgUrl = "https://images.unsplash.com/";
@@ -46,16 +47,21 @@ export default function Introduce() {
         <Title style={{ position: "relative" }}>WHAT DO YOU CALL </Title>
         <Title>A PILE OF CATS</Title>
         <Title style={{ position: "relative" }}>A MEOWTAIN</Title>
-        <ContentBtn
-          style={{ width: 115, marginTop: 120 }}
-          color="#ffc233"
-          onMouseEnter={() => handleHover(1)}
-          onMouseLeave={() => handleHover(0)}
-        >
-          Contact us
-          <Card deg={hover ? 0 : -4} style={{ border: `1px solid #ffc233` }} />
-          <Card deg={hover ? 0 : 4} style={{ border: `1px solid #ffc233` }} />
-        </ContentBtn>
+        <StyledLink to="/contactus">
+          <ContentBtn
+            style={{ width: 115, marginTop: 120 }}
+            color="#ffc233"
+            onMouseEnter={() => handleHover(1)}
+            onMouseLeave={() => handleHover(0)}
+          >
+            Contact us
+            <Card
+              deg={hover ? 0 : -4}
+              style={{ border: `1px solid #ffc233` }}
+            />
+            <Card deg={hover ? 0 : 4} style={{ border: `1px solid #ffc233` }} />
+          </ContentBtn>
+        </StyledLink>
       </div>
       <div
         style={{

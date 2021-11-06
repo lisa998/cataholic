@@ -9,8 +9,8 @@ export const Body = styled.div((props) => ({
   color: "#042fab",
   scrollBehavior: "smooth",
   justifyContent: "flex-end",
-  height: "66vh",
-  top: "34vh",
+  height: "90vh",
+  top: "10vh",
   position: "relative",
 }));
 export const Div = styled.div((props) => ({
