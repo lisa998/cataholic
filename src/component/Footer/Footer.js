@@ -24,7 +24,7 @@ export default function Footer() {
     if (!form) {
       scrollToForm();
     }
-    setForm((form) => !form);
+    setForm((form) => +!form);
   };
   const contactfolding = () => {
     if (form) {
@@ -33,7 +33,7 @@ export default function Footer() {
     if (!contact) {
       scrollToBottom();
     }
-    setContact((contact) => !contact);
+    setContact((contact) => +!contact);
   };
   return (
     <>

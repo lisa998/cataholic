@@ -5,7 +5,7 @@ import * as React from "react";
 
 export default function Cards() {
   const [page, setPage] = React.useState(0);
-  const [state, setState] = React.useState(0);
+  const [state, setState] = React.useState(0); //nextPage:1; prevPage:-1 ; affect css transition
   const nextPage = () => {
     setState(1);
     setTimeout(() => {
@@ -26,6 +26,19 @@ export default function Cards() {
       setState(0);
     }, 800);
   };
+  let cards = [
+    { page: (page + 1) % 5, state: 0, transform: null }, //pre, left
+    {
+      page: page,
+      state: +(state === -1),
+      transform: state === -1 ? null : "translate(-80vw, -80vh) skewY(-15deg)", //current, center
+    },
+    {
+      page: (page + 2) % 5,
+      state: +(state === 1),
+      transform: state === 1 ? null : "translate(70vw, 70vh) skewY(-15deg)", //next, right
+    },
+  ];
   return (
     <Body>
       <H1>Things Only Cat Owners Understand</H1>
@@ -50,26 +63,12 @@ export default function Cards() {
       </div>
       <Card transform={"rotateZ(4deg)"} />
       <Card transform={"rotateZ(-6deg)"} />
-      <Card>
-        {content[(page + 1) % 5].title}
-        <P>{content[(page + 1) % 5].content}</P>
-      </Card>
-      <Card
-        state={+(state === -1)}
-        transform={
-          state === -1 ? null : "translate(-80vw, -80vh) skewY(-15deg)"
-        }
-      >
-        {content[page].title}
-        <P>{content[page].content}</P>
-      </Card>
-      <Card
-        state={+(state === 1)}
-        transform={state === 1 ? null : "translate(70vw, 70vh) skewY(-15deg)"}
-      >
-        {content[(page + 2) % 5].title}
-        <P>{content[(page + 2) % 5].content}</P>
-      </Card>
+      {cards.map((ele, i) => (
+        <Card key={i} state={ele.state} transform={ele.transform}>
+          {content[ele.page].title}
+          <P>{content[ele.page].content}</P>
+        </Card>
+      ))}
     </Body>
   );
 }

@@ -31,7 +31,7 @@ export const Info = ({ data, href }) => {
         }}
       >
         {data.words.map((ele) => (
-          <Words>{ele}</Words>
+          <Words key={ele}>{ele}</Words>
         ))}
       </div>
       <div style={{ width: "90%", position: "absolute", bottom: "2rem" }}>
@@ -40,13 +40,14 @@ export const Info = ({ data, href }) => {
           {data.bottomInfo.map((ele, i) =>
             href ? (
               <a
+                key={ele}
                 href={"#" + data.bottomInfo[i]}
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <h1>{ele}</h1>
               </a>
             ) : (
-              <h1>{ele}</h1>
+              <h1 key={ele}>{ele}</h1>
             )
           )}
         </Bottom>

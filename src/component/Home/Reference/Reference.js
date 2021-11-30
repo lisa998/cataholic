@@ -45,8 +45,8 @@ export default function Reference() {
       </h1>
       <Words style={wordsStyle}>This website is only for practicing.</Words>
       <div style={{ display: "flex", marginBottom: 40 }}>
-        {img.map((ele) => (
-          <a href={ele.href}>
+        {img.map((ele, i) => (
+          <a href={ele.href} key={i}>
             <Block img={process.env.PUBLIC_URL + ele.img} />
           </a>
         ))}

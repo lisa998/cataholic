@@ -10,6 +10,7 @@ export default function Feature() {
   ]);
   const [rotate, setRotate] = React.useState([0, 0.1]);
   const text = React.useMemo(
+    // x, y, deg 為transform最終位置
     () => [
       {
         words: "Cute",
@@ -42,15 +43,17 @@ export default function Feature() {
     const listener = () => {
       currentScroll = scrollVal;
       let scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop;
+        document.documentElement.scrollTop || document.body.scrollTop; //頁面scroll位置
       scrollVal = scrollTop;
       if (scrollTop > 1980) {
+        //超過sticky高度，要scroll向下個項目，設為relative
         setSticky(0);
       }
       if (scrollTop < 1980) {
         setSticky(1);
         if (scrollTop > window.screen.availHeight) {
-          let degree =
+          // start to move cards
+          let degree = //move degrees
             Math.ceil((scrollTop - window.screen.availHeight) / 94) / 10;
           setTransform([
             [text[0].deg * degree, text[0].x * degree, text[0].y * degree],
@@ -65,6 +68,7 @@ export default function Feature() {
           ]);
         }
       }
+      // scroll let to shock
       if (currentScroll > scrollVal) {
         setRotate([0.3, 0.05]);
         setTimeout(() => setRotate([0, 0.15]), 10);

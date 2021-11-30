@@ -19,8 +19,9 @@ export default function Form({ formRef }) {
           flexWrap: "wrap",
         }}
       >
-        {Object.keys(value).map((ele) => (
+        {Object.keys(value).map((ele, i) => (
           <Input
+            key={i}
             placeholder={ele}
             value={value[ele]}
             onChange={(e) =>

@@ -48,7 +48,11 @@ function App() {
             </Route>
           ))}
           {p.map((ele, i) => (
-            <Route path={"/" + page[i].toLowerCase()} component={ele}></Route>
+            <Route
+              path={"/" + page[i].toLowerCase()}
+              component={ele}
+              key={i}
+            ></Route>
           ))}
         </Switch>
       </Suspense>
